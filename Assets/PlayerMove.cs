@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     GameManager.Instance.restart();
                     enemigoSprite.SetActive(false);
-                }
+                }  
                 turn = false;
                 StartCoroutine(delayTurn());
             }

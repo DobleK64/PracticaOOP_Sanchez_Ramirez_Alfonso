@@ -14,16 +14,16 @@ public class GridGenerator : MonoBehaviour
     {
         GenerateGrid();
     }
-
-    void GenerateGrid()
+    //Generador de arbustos
+    void GenerateGrid() 
     {
         Vector3 startPos = transform.position;
-        for (int row = 0; row < rows; row++)
+        for (int row = 0; row < rows; row++) // Este bucle recorre las filas de la cuadricula
         {
-            for (int col = 0; col < columns; col++)
+            for (int col = 0; col < columns; col++)     
             {
                 Vector3 spawnPos = startPos + new Vector3(col * spacing, -row * spacing, 0);
-                GameObject prefabToSpawn = Random.Range(0, 2) == 0 ? prefab1 : prefab2;
+                GameObject prefabToSpawn = Random.Range(0, 2) == 0 ? prefab1 : prefab2; //Hace que de los arbustos uno tenga el prefab que contenga al enemigo y otro que no
                 Instantiate(prefabToSpawn, spawnPos, Quaternion.identity, transform);
             }
         }
