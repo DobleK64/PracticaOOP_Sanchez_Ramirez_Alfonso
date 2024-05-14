@@ -14,7 +14,7 @@ public class goblin : Character
         _sprite = sprite;
         health = 100;
     }
-    public override float Attack()
+    public override float Attack() //El saño del goblin y hace el triple de daño cuando esta a menos de 30 de vida
     {
         float temp = 0;
         if (health < 30)
@@ -24,7 +24,7 @@ public class goblin : Character
         return temp;
     }
 
-    public override float Heal()
+    public override float Heal() // se cura la mitad del daño que hace
     {
         float temp = 0;
         if (health < 30)

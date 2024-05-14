@@ -10,7 +10,7 @@ public abstract class Character : MonoBehaviour
     protected float jumpForce;
     public Sprite _sprite;
 
-    public Character(string name, float damage, Sprite sprite)
+    public Character(string name, float damage, Sprite sprite) //  Las variables que van a tener todas las clases hijas que hereden de esta clase
     {
         this.nameCharacter = name;
         this.damage = damage;

@@ -29,3 +29,4 @@ public class UIManager : MonoBehaviour
         estadoenemigo.text = _estado;
     }
 }
+//El hud del combate

@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (!GameManager.Instance.inCombat)
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveHorizontal = Input.GetAxis("Horizontal"); //Manera reducida que hace que el personaje se mueva reduciendo el codigo
             float moveVertical = Input.GetAxis("Vertical");
 
             Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0) && turn == true)
+            if (Input.GetMouseButtonDown(0) && turn == true) //Las acciones que hacen al presionar los botones del raton
             {
                 if (combateManager.newAccion(0))
                 {
@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) // aparecen los sprites y se congela la escena para que no se mueva nada en ella mas que el combate
     {
         if(collision.tag == "Enemigo")
         {

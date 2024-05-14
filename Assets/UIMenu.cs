@@ -11,8 +11,8 @@ public class UIMenu : MonoBehaviour
     
     public void UpdateData()
     {
-        GameManager.Instance.playerName = nameP.text;
-        GameManager.Instance.playerClass = clase.options[clase.value].text;
+        GameManager.Instance.playerName = nameP.text; //Para colocar el nombre
+        GameManager.Instance.playerClass = clase.options[clase.value].text; //para elegir entre las clases
     }
     public void loadLevel()
     {

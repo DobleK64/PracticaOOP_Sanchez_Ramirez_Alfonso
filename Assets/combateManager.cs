@@ -14,38 +14,38 @@ public class combateManager : MonoBehaviour
         enemigo = _enemigo;
         UpdateUICombat();
     }
-    public bool newAccion(int id)
+    public bool newAccion(int id) //Es la accion del personaje
     {
         switch (id)
         {
             case 0:
-                enemigo.health -= player.Attack();
+                enemigo.health -= player.Attack(); //Si el jugador atake el daño que le hace al enemigo
                 GameManager.Instance.uiManager.UpdatePlayerEstado("Atake: " + player.Attack());
                 enemigoAccion();
                 break;
             case 1:
-                player.Heal();
+                player.Heal(); //La vida que se cura el jugador
                 GameManager.Instance.uiManager.UpdatePlayerEstado("heal: " + player.Heal());
                 enemigoAccion();
                 break;
         }
         UpdateUICombat();
-        if (player.health <= 0 || enemigo.health <= 0)
+        if (player.health <= 0 || enemigo.health <= 0) //Actualizamos la vida de cada uno despues de cada turno
             return true;
         else
             return false;
     }
-    private void enemigoAccion()
+    private void enemigoAccion() //Es la accion del enemigo
     {
         int temp = Random.Range(0,2);
         switch (temp)
         {
             case 0:
-                player.health -= enemigo.Attack();
+                player.health -= enemigo.Attack(); //Si el enemigo ataka el daño que le hace al jugador
                 GameManager.Instance.uiManager.UpdateEnemigoEstado("Atake: " + enemigo.Attack());
                 break;
             case 1:
-                enemigo.Heal();
+                enemigo.Heal(); //Si el enemigo se cura la vida que se cura
                 GameManager.Instance.uiManager.UpdateEnemigoEstado("heal: " + enemigo.Heal());
                 break;
         }

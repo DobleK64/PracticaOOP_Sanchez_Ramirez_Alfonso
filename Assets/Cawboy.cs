@@ -18,12 +18,12 @@ public class Cawboy : Character
     public override float Attack()
     {
         Debug.Log("Cowboy ataca");
-        return Random.Range(damage, damage * 1.5f);
+        return Random.Range(damage, damage * 1.5f); //El daño
     }
 
     public override float Heal()
     {
-        Debug.Log("cowboy se cura");
+        Debug.Log("cowboy se cura"); //Lo que el cawboy se cura
         health += 10;
         if (health >= 100)
             health = 100;
